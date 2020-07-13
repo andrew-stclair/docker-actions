@@ -7,8 +7,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             uses: docker/build-push-action@v1
-            with:
-                username: ${{ secrets.DOCKER_USERNAME }}
-                password: ${{ secrets.DOCKER_PASSWORD }}
-                repository: st0ner1995/github-runner
-                tags: latest
+                with:
+                    username: ${{ secrets.DOCKER_USERNAME }}
+                    password: ${{ secrets.DOCKER_PASSWORD }}
+                    repository: st0ner1995/github-runner
+                    tags: latest
