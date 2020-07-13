@@ -1,4 +1,4 @@
-name: Publish to Docker Hub
+name: Test and Publish to Docker Hub
 on:
     push:
         branches:
@@ -13,8 +13,6 @@ jobs:
                 password: ${{ secrets.DOCKER_PASSWORD }}
                 repository: st0ner1995/github-runner
                 tags: latest
-
-name: Test Dockerfile
 on: [push]
 jobs:
     test:
