@@ -1,10 +1,7 @@
 name: Test and Publish to Docker Hub
-on:
-    push:
-        branches:
-            - master
+on: [push]
 jobs:
-    test:
+    build:
         runs-on: ubuntu-latest
         steps:
             uses: docker/github-actions@v1
@@ -13,12 +10,3 @@ jobs:
                 INPUT_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
                 INPUT_PUSH: false
                 INPUT_REPOSITORY: st0ner1995/github-runner
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            uses: docker/build-push-action@v1
-            with:
-                username: ${{ secrets.DOCKER_USERNAME }}
-                password: ${{ secrets.DOCKER_PASSWORD }}
-                repository: st0ner1995/github-runner
-                tags: latest
