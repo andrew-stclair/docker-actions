@@ -1,0 +1,12 @@
+name: Test Dockerfile
+on: [push]
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            uses: docker/github-actions@v1
+            with:
+                INPUT_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+                INPUT_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+                INPUT_PUSH: false
+                INPUT_REPOSITORY: st0ner1995/github-runner
