@@ -1,7 +1,7 @@
-name: Test and Publish to Docker Hub
+name: Publish to Docker Hub
 on:
-    push:
-        branches: [master]
+    on:
+        workflow_dispatch:
 jobs:
     build:
         runs-on: ubuntu-latest

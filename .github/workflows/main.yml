@@ -1,4 +1,4 @@
-name: Test and Publish to Docker Hub
+name: Test Dockerfile
 on: [push]
 jobs:
     build:
