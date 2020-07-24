@@ -4,9 +4,8 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-          - name: Get Repository
-            shell: bash
-            run: git clone https://github.com/andrew-stclair/github-runner.git /tmp/github/workspace
+          - name: Checkout code
+          uses: actions/checkout@v2
 
           - name: Build Container
             uses: docker/build-push-action@v1
@@ -16,4 +15,3 @@ jobs:
                 repository: st0ner1995/github-runner
                 push: false
                 tags: latest
-                path: /tmp/github/workspace
