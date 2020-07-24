@@ -6,7 +6,7 @@ jobs:
         steps:
           - name: Get Repository
             shell: bash
-            run: git clone https://github.com/andrew-stclair/github-runner.git /github/workspace
+            run: git clone https://github.com/andrew-stclair/github-runner.git /tmp/github/workspace
 
           - name: Build Container
             uses: docker/build-push-action@v1
@@ -16,3 +16,4 @@ jobs:
                 repository: st0ner1995/github-runner
                 push: false
                 tags: latest
+                path: /tmp/github/workspace
