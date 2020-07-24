@@ -1,2 +1,2 @@
 # github-runner
-Docker image for hosting a github runner
+Docker actions template for github

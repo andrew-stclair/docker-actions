@@ -12,6 +12,6 @@ jobs:
             with:
                 username: ${{ secrets.DOCKER_USERNAME }}
                 password: ${{ secrets.DOCKER_PASSWORD }}
-                repository: st0ner1995/github-runner
+                repository: ${{ secrets.DOCKER_REPOSITORY }}
                 push: false
                 tags: latest
