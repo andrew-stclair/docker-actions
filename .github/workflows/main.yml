@@ -4,9 +4,13 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-          - uses: docker/build-push-action@v1
+          - name: Get Repository
+            uses: docker/build-push-action@v1
             shell: bash
             run: git clone https://github.com/andrew-stclair/github-runner.git /github/workspace
+
+          - name: Build Container
+          uses: docker/build-push-action@v1
             with:
                 username: ${{ secrets.DOCKER_USERNAME }}
                 password: ${{ secrets.DOCKER_PASSWORD }}
